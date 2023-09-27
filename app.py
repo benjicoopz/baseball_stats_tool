@@ -3,7 +3,7 @@ from constants import TEAMS
 import copy   
 
 player_data = copy.deepcopy(PLAYERS)
-
+team_data = copy.deepcopy(TEAMS)
 
 
 def clean_data(player_data):
@@ -16,7 +16,7 @@ def clean_data(player_data):
             fixed["experience"] = True
         else:
             fixed["experience"] = False
-        fixed["guardians"] = user["guardians"].split("and")
+        fixed["guardians"] = user["guardians"].split(" and ")
         cleaned.append(fixed)
     return cleaned
 
@@ -33,6 +33,16 @@ def balance_teams(clean_players):
     print(f"experienced: {experienced}")
     print(f"not experienced: {non_experienced}")
     
+    while experienced:
+        for team in team_data:
+            popped = experienced.pop(0)
+            team.append(popped)
+           
+            
+         
+          
+            
+    
    
         
     
@@ -46,5 +56,7 @@ def balance_teams(clean_players):
 
 
 if __name__ == "__main__" :
+    clean_data(player_data)
     balance_teams(clean_players)
+    
     
