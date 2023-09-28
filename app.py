@@ -20,12 +20,11 @@ def clean_data(player_data):
         cleaned.append(fixed)
     return cleaned
 
-clean_players = clean_data(player_data)
 
-def balance_teams(clean_players):
+def balance_teams(player_data):
     experienced = []
     non_experienced = []
-    for user in clean_players:
+    for user in player_data:
         if user["experience"] == True:
             experienced.append(user)
         else:
@@ -33,10 +32,18 @@ def balance_teams(clean_players):
     print(f"experienced: {experienced}")
     print(f"not experienced: {non_experienced}")
     
+    new_teams = []
+    for team in team_data:
+        team_object = {team: {"players": []}}
+        new_teams.append(team_object)
     while experienced:
         for team in team_data:
             popped = experienced.pop(0)
-            team.append(popped)
+            
+        
+            
+        
+            
            
             
          
@@ -57,6 +64,7 @@ def balance_teams(clean_players):
 
 if __name__ == "__main__" :
     clean_data(player_data)
+    clean_players = clean_data(player_data)
     balance_teams(clean_players)
     
     
