@@ -39,6 +39,7 @@ def balance_teams(player_data):
     while experienced:
         for team in team_data:
             popped = experienced.pop(0)
+            popped.append(new_teams)
             
         
             
