@@ -6,6 +6,12 @@ player_data = copy.deepcopy(PLAYERS)
 team_data = copy.deepcopy(TEAMS)
 
 
+print()
+
+
+
+
+
 def clean_data(player_data):
     cleaned = []
     for user in player_data:
@@ -24,6 +30,7 @@ def clean_data(player_data):
 def balance_teams(player_data):
     experienced = []
     non_experienced = []
+    
     for user in player_data:
         if user["experience"] == True:
             experienced.append(user)
@@ -34,18 +41,27 @@ def balance_teams(player_data):
     
     new_teams = []
     for team in team_data:
-        team_object = {team: {"players": []}}
+        team_object = {"team_name": team, "players": []}
         new_teams.append(team_object)
+        
     while experienced:
-        for team in team_data:
+        for team in new_teams:
             popped = experienced.pop(0)
-            popped.append(new_teams)
+            team["players"].append(popped)
+            
+    while non_experienced:
+        for team in new_teams:
+            popped2 = non_experienced.pop(0)
+            team["players"].append(popped2)
+            
+            
+    
             
         
             
         
             
-           
+
             
          
           
@@ -64,7 +80,6 @@ def balance_teams(player_data):
 
 
 if __name__ == "__main__" :
-    clean_data(player_data)
     clean_players = clean_data(player_data)
     balance_teams(clean_players)
     
