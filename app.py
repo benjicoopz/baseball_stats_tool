@@ -1,14 +1,37 @@
 from constants import PLAYERS
 from constants import TEAMS
 import copy   
+import sys
 
 player_data = copy.deepcopy(PLAYERS)
 team_data = copy.deepcopy(TEAMS)
 
 
-print()
+print("BASKETBALL TEAM STATS TOOL")
+print("\n---MENU---")
+print("\nHere are your choices:")
+print("\n1) Display Team Stats")
+print("2) Quit")
+while True:
+    try:
+        option = input("\nEnter an option: ")
+        if option == "1":
+            print("1) Panthers")
+            print("2) Bandits")
+            print("3) Warriors")
+            break
+        elif option == "2":
+            sys.exit()
+        else:
+            raise Exception("Please enter 1 or 2")
+    except Exception as e:
+        print(e)
+    
+
+    
 
 
+    
 
 
 
@@ -36,8 +59,7 @@ def balance_teams(player_data):
             experienced.append(user)
         else:
             non_experienced.append(user)
-    print(f"experienced: {experienced}")
-    print(f"not experienced: {non_experienced}")
+    
     
     new_teams = []
     for team in team_data:
@@ -55,30 +77,6 @@ def balance_teams(player_data):
             team["players"].append(popped2)
             
             
-    
-            
-        
-            
-        
-            
-
-            
-         
-          
-            
-    
-   
-        
-    
-    
-    
-
-
-    
-    
-    
-
-
 if __name__ == "__main__" :
     clean_players = clean_data(player_data)
     balance_teams(clean_players)
