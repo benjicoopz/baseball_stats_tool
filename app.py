@@ -85,7 +85,9 @@ def menu():
             print("\nTeam: Panthers Stats")
             print("--------------------------")
             print("Total players: ", int(6))
-            break
+            print("Players on Team: ")
+            print("Karl Saygan, Les Clay, Herschel Krustofski, Matt Gill, Joe Kavalier, Eva Gordon")
+            
             
     
 
@@ -103,8 +105,9 @@ def menu():
 if __name__ == "__main__":
     clean_players = clean_data(player_data)                
     balance_teams(clean_players)
+    print(new_teams)
     menu()
-    print(new_teams)            
+               
             
             
             
