@@ -69,22 +69,27 @@ def menu():
         try:
                 option = input("\nEnter an option: ")
                 if option == "1":
-                    print("\n1) Panthers")
-                    print("2) Bandits")
-                    print("3) Warriors")
+                    menu2()
                     break
                 elif option == "2":
+                    print("Thanks for checking out the stats!")
                     sys.exit()
                 else:
                     raise Exception("Please enter 1 or 2")
         except Exception as e:
                 print(e)
+    
+    
+def menu2():
+    team_total = len(new_teams)
+    for index, team in enumerate(new_teams):
+        print(f"\n{index + 1}) {team['team_name']}")
     while True:
         option2 = input("\nEnter an option: ")
         if option2 == "1":
-            print("\nTeam: Panthers Stats")
+            print(f"\nTeam:{0}{team['team_name']} Stats")
             print("--------------------------")
-            print("Total players: ", int(6))
+            print("Total players: ", )
             print("Players on Team: ")
             print("Karl Saygan, Les Clay, Herschel Krustofski, Matt Gill, Joe Kavalier, Eva Gordon")
             
@@ -105,7 +110,6 @@ def menu():
 if __name__ == "__main__":
     clean_players = clean_data(player_data)                
     balance_teams(clean_players)
-    print(new_teams)
     menu()
                
             
