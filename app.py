@@ -89,7 +89,7 @@ def menu2():
             print(f"\nTeam: {new_teams[0]['team_name']} Stats")
             print("--------------------------")
             print("Total players: ", len(new_teams[0]["players"]))
-            print("Players on Team: ")
+            print("\nPlayers on Team: ")
             for player in new_teams[0]['players']:
                 print(player['name'] + ",")
            
