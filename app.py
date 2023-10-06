@@ -91,8 +91,11 @@ def menu2():
                 print("--------------------------")
                 print("Total players: ", len(new_teams[0]["players"]))
                 print("\nPlayers on Team: \n")
+                team1_players = []
                 for player in new_teams[0]['players']:
-                    print(player['name'] + ",")
+                    team1_players.append(player['name'])
+                team1_playerzz = ", ".join(team1_players)
+                print(team1_playerzz)
                 input("\nPress anything to continue: ")
                 menu()
             elif option2 == "2":
@@ -100,8 +103,11 @@ def menu2():
                 print("--------------------------")
                 print("Total players: ", len(new_teams[1]["players"]))
                 print("\nPlayers on Team: \n")
+                team2_players = []
                 for player in new_teams[1]['players']:
-                    print(player['name'] + ",")
+                    team2_players.append(player['name'])
+                team2_playerzz = ", ".join(team2_players)
+                print(team2_playerzz)
                 input("\nPress anything to continue: ")
                 menu()
             elif option2 == "3":
@@ -109,8 +115,11 @@ def menu2():
                 print("--------------------------")
                 print("Total players: ", len(new_teams[2]["players"]))
                 print("\nPlayers on Team: \n")
+                team3_players = []
                 for player in new_teams[2]['players']:
-                    print(player['name'] + ",")
+                    team3_players.append(player['name'])
+                team3_playerzz = ", ".join(team3_players)
+                print(team3_playerzz)
                 input("\nPress anything to continue: ")
                 menu()
             else:
