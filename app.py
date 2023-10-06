@@ -81,18 +81,21 @@ def menu():
     
     
 def menu2():
-    team_total = len(new_teams)
     for index, team in enumerate(new_teams):
         print(f"\n{index + 1}) {team['team_name']}")
     while True:
         option2 = input("\nEnter an option: ")
         if option2 == "1":
-            print(f"\nTeam:{0}{team['team_name']} Stats")
+            print(f"\nTeam: {new_teams[0]['team_name']} Stats")
             print("--------------------------")
-            print("Total players: ", )
+            print("Total players: ", len(new_teams[0]["players"]))
             print("Players on Team: ")
-            print("Karl Saygan, Les Clay, Herschel Krustofski, Matt Gill, Joe Kavalier, Eva Gordon")
+            for player in new_teams[0]['players']:
+                print(player['name'] + ",")
+           
             
+       
+                
             
     
 
