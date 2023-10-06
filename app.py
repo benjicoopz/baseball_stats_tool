@@ -84,14 +84,41 @@ def menu2():
     for index, team in enumerate(new_teams):
         print(f"\n{index + 1}) {team['team_name']}")
     while True:
-        option2 = input("\nEnter an option: ")
-        if option2 == "1":
-            print(f"\nTeam: {new_teams[0]['team_name']} Stats")
-            print("--------------------------")
-            print("Total players: ", len(new_teams[0]["players"]))
-            print("\nPlayers on Team: ")
-            for player in new_teams[0]['players']:
-                print(player['name'] + ",")
+        try:
+            option2 = input("\nEnter an option: ")
+            if option2 == "1":
+                print(f"\nTeam: {new_teams[0]['team_name']} Stats")
+                print("--------------------------")
+                print("Total players: ", len(new_teams[0]["players"]))
+                print("\nPlayers on Team: \n")
+                for player in new_teams[0]['players']:
+                    print(player['name'] + ",")
+                input("\nPress anything to continue: ")
+                menu()
+            elif option2 == "2":
+                print(f"\nTeam: {new_teams[1]['team_name']} Stats")
+                print("--------------------------")
+                print("Total players: ", len(new_teams[1]["players"]))
+                print("\nPlayers on Team: \n")
+                for player in new_teams[1]['players']:
+                    print(player['name'] + ",")
+                input("\nPress anything to continue: ")
+                menu()
+            elif option2 == "3":
+                print(f"\nTeam: {new_teams[2]['team_name']} Stats")
+                print("--------------------------")
+                print("Total players: ", len(new_teams[2]["players"]))
+                print("\nPlayers on Team: \n")
+                for player in new_teams[2]['players']:
+                    print(player['name'] + ",")
+                input("\nPress anything to continue: ")
+                menu()
+            else:
+                raise Exception("Please enter 1-3 to view stats")
+        except Exception as err:
+            print(err)
+            
+            
            
             
        
@@ -114,6 +141,7 @@ if __name__ == "__main__":
     clean_players = clean_data(player_data)                
     balance_teams(clean_players)
     menu()
+    
                
             
             
